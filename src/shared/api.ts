@@ -23,7 +23,7 @@ export class Api {
       baseURL: `${node.protocol}://${node.host}:${node.port}${node.path || ''}`,
       headers: {
         'x-typesense-api-key': apiKey , 
-        'http_x_senteca_authorization' : `Bearer ${process.env.VUE_PUBLIC_SENTECA_KEY}`
+        'X-Senteca-Authorization' : `Bearer ${process.env.VUE_PUBLIC_SENTECA_KEY}`
       }
     });
     this.typesenseClient = new Typesense.Client({
