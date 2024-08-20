@@ -22,8 +22,8 @@ export class Api {
     this.axiosClient = axios.create({
       baseURL: `${node.protocol}://${node.host}:${node.port}${node.path || ''}`,
       headers: {
-        'x-typesense-api-key': apiKey, 
-        'X-Senteca-Authorization': `Bearer ${process.env.VUE_PUBLIC_SENTECA_KEY}`
+        'x-typesense-api-key': apiKey,
+        'X-Senteca-Authorization': `Bearer ${process.env.VUE_APP_SENTECA_KEY}`
       }
     });
     this.typesenseClient = new Typesense.Client({
@@ -31,7 +31,7 @@ export class Api {
         ...node
       }],
       additionalHeaders: {
-        'X-Senteca-Authorization': `Bearer ${process.env.VUE_PUBLIC_SENTECA_KEY}`
+        'X-Senteca-Authorization': `Bearer ${process.env.VUE_APP_SENTECA_KEY}`
       },
       apiKey,
       //connection_timeout_seconds: 3600,
